@@ -11,9 +11,9 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn) {
 	mysqLi_query($conn, "SET NAMES 'utf8' ");
 	// echo "Kết nối databse thành công";
-}
-else{
+	$pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} else {
 	echo "Kết nối databse thất bại";
 	die("Kết nối databse thất bại: " . $conn->connect_error);
 }
-?>

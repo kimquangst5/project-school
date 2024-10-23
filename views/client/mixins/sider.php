@@ -1,3 +1,12 @@
+<style>
+	a{
+		display: block;
+		text-decoration: none;
+		color: black;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+</style>
 <aside>
 	<div class="inner_wrap">
 		<?php
@@ -6,7 +15,12 @@
 		if (mysqLi_num_rows($result) > 0) {
 			echo '<ul>';
 			while ($row = mysqli_fetch_assoc($result)) {
-				echo '<li>' . $row['title'] . '</li>';
+				$title = $row['title'];
+				$id = $row['id'];
+				echo <<<HTML
+					<a href=/thoi-trang/views/client/pages/product-category/index.php?id=$id>$title</a>
+					HTML;
+				// echo '<li>' . $row['title'] . '</li>';
 			}
 			echo '</ul>';
 		}

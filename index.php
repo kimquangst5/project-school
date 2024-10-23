@@ -14,7 +14,7 @@
 				$priceNew = $row['priceNew'];
 				echo <<<HTML
 							
-								<div product-new_item="">
+								<!-- <div product-new_item="">
 									<div>
 										<img src=$thumbnail alt="">
 									</div>
@@ -22,7 +22,7 @@
 										<div>$title</div>
 										<div>$priceNew đ</div>
 									</div>
-								</div>
+								</div> -->
 								
 							HTML;
 			}
